@@ -1,3 +1,4 @@
+#34 from The Python Workbook
 bread_price = 3.49
 discount = 0.6
 

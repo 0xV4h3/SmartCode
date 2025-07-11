@@ -1,3 +1,4 @@
+#32 from The Python Workbook
 def digits_sum(number) -> int:
     digitssum = 0
     for digit in str(number):
