@@ -14,7 +14,7 @@ def factorial_iterative(number):
 
 if __name__ == '__main__':
     num = input("Enter number: ")
-    while not num.isnumeric():
+    while not num.isdigit():
         num = input("Enter number again: ")
 
     num = int(num)

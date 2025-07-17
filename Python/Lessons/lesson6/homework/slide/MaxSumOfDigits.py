@@ -6,7 +6,7 @@ def digits_sum(number) -> int:
 
 if __name__ == '__main__':
     count = input("Enter the count of numbers: ")
-    while not count.isnumeric():
+    while not count.isdigit():
         count = input("Enter count again: ")
 
     count = int(count)
@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     for _ in range(count):
         num = input("Enter number: ")
-        while not num.isnumeric():
+        while not num.isdigit():
             num = input("Enter number again: ")
 
         num = int(num)
