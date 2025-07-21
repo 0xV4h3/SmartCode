@@ -6,7 +6,7 @@ pulled_names = []
 name = input("Enter name: ")
 while name != '':
     group.append(name)
-    name = input("Enter text: ")
+    name = input("Enter name: ")
 
 pulled = ""
 for name in group:
