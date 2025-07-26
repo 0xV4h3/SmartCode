@@ -32,22 +32,22 @@ def choose_duration():
 def draw(monkey, snake, fruit, fruit_icon, ms, ss, left, player_char):
     clear()
     print(f"⏱ Time left: {left:3d}s   You: {ms}   Snake: {ss}")
-    print('#' * (SIZE*2 + 2))
+    print('#' * (SIZE*2 + 3))
     for i in range(SIZE):
-        row = ['#']
+        row = ['# ']
         for j in range(SIZE):
             if (i,j) == monkey:
-                cell = f"{player_char} "
+                cell = f"{player_char}"
             elif (i,j) == snake:
-                cell = '🐍 '
+                cell = '🐍'
             elif (i,j) == fruit:
-                cell = f"{fruit_icon} "
+                cell = f"{fruit_icon}"
             else:
                 cell = '. '
             row.append(cell)
         row.append('#')
         print(''.join(row))
-    print('#' * (SIZE*2 + 2))
+    print('#' * (SIZE*2 + 3))
     print("\nUse arrows or WASD, 'q' to quit.")
 
 def main():
