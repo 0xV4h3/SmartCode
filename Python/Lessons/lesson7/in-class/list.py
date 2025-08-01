@@ -18,10 +18,10 @@
 #
 # print(x)
 
-#134 from Workbook
+# 134 from Workbook
 
 # x = [1, 2, 3, 4]
-# combinations = [[]]
+# combinations = []
 #
 # for i in range(len(x)):
 #     for j in range(i + 1 , len(x) + 1):
