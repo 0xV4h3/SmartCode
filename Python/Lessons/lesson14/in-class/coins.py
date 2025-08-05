@@ -18,8 +18,8 @@ def coins(count: int, amount: int, coin_dict: dict) -> (bool, dict):
 if __name__ == "__main__":
     denominations_list = [25, 10, 5, 1]
     coin = dict.fromkeys(denominations_list, 0)
-    coin_count = 6
-    coin_amount = 64
+    coin_count = int(input("Enter count of coins: "))
+    coin_amount = int(input("Enter amount: "))
     result, result_dict = coins(coin_count, coin_amount, coin)
     if result:
         print(f"We can get {coin_amount} amount with {coin_count} coins with this denominations {denominations_list}, here are how:")
