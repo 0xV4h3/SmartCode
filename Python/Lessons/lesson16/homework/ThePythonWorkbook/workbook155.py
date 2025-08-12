@@ -27,6 +27,8 @@ def freq_word() -> (int, List[str]):
         def clean(word: str) -> str:
             while word and not word[-1].isalnum():
                 word = word[:-1]
+            while word and not word[0].isalnum():
+                word = word[1:]
             return word.lower()
         for unclean_word in unclean_words:
             cleaned = clean(unclean_word)
