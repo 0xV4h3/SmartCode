@@ -1,0 +1,13 @@
+# Ignore all .idea files and folders
+.idea/
+
+# Allow code style and run configuration sharing (if needed for team)
+!.idea/codeStyles/
+!.idea/runConfigurations/
+
+# Ignore user-specific/workspace files
+.idea/shelf/
+.idea/workspace.xml
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
