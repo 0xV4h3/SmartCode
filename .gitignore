@@ -1,5 +1,5 @@
 # Ignore all .idea files and folders
-.idea/
+Python/Lessons/.idea/
 
 # Allow code style and run configuration sharing (if needed for team)
 !.idea/codeStyles/
@@ -11,3 +11,6 @@
 .idea/httpRequests/
 .idea/dataSources/
 .idea/dataSources.local.xml
+
+# Ignore all .env files
+**/.env

@@ -3,8 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import threading, time
+import os
+from dotenv import load_dotenv
 
-TOKEN = "Token"
+load_dotenv()
+
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 bot = TeleBot(TOKEN)
 
 chrome_options = Options()
