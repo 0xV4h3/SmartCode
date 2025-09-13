@@ -66,28 +66,33 @@ class BankCard:
         self.__is_authenticated = False
         print("Logged out.")
 
-    def get_balance(self) -> Optional[int]:
+    @property
+    def balance(self) -> Optional[int]:
         if not self.__is_authenticated:
             print("Not authenticated.")
             return None
-        return self.__account.get_balance()
+        return self.__account.balance
 
-    def get_transactions(self) -> Optional[List[str]]:
+    @property
+    def transactions(self) -> Optional[List[str]]:
         if not self.__is_authenticated:
             print("Not authenticated.")
             return None
-        return self.__account.get_transactions()
+        return self.__account.transactions
 
-    def get_card_number(self) -> str:
+    @property
+    def card_number(self) -> str:
         return self.__card_number
 
-    def get_unique_id(self) -> Optional[str]:
+    @property
+    def unique_id(self) -> Optional[str]:
         if not self.__is_authenticated:
             print("Not authenticated.")
             return None
         return self.__unique_id
 
-    def get_owner(self) -> str:
+    @property
+    def owner(self) -> str:
         return f"{self.__name} {self.__surname}"
 
 class BankAccount:
@@ -100,13 +105,14 @@ class BankAccount:
         self.__cards: Dict[str, BankCard] = {}
 
     def add_card(self, card: BankCard):
-        self.__cards[card.get_card_number()] = card
+        self.__cards[card.card_number] = card
 
     def remove_card(self, card_number: str):
         if card_number in self.__cards:
             del self.__cards[card_number]
 
-    def get_cards(self) -> List[BankCard]:
+    @property
+    def cards(self) -> List[BankCard]:
         return list(self.__cards.values())
 
     def deposit(self, amount: int, card_number: Optional[str] = None) -> bool:
@@ -132,37 +138,41 @@ class BankAccount:
     def transfer(self, other_account: "BankAccount", amount: int) -> bool:
         if 0 < amount <= self.__balance:
             self.__balance -= amount
-            self.__transactions.append(f"Transfer to {other_account.get_account_number()}: -${amount}")
+            self.__transactions.append(f"Transfer to {other_account.account_number}: -${amount}")
             other_account.__balance += amount
-            other_account.__transactions.append(f"Transfer from {self.get_account_number()}: +${amount}")
+            other_account.__transactions.append(f"Transfer from {self.account_number}: +${amount}")
             return True
         return False
 
-    def get_balance(self) -> int:
+    @property
+    def balance(self) -> int:
         return self.__balance
 
-    def get_account_number(self) -> str:
+    @property
+    def account_number(self) -> str:
         return self.__account_number
 
-    def get_owner(self) -> str:
+    @property
+    def owner(self) -> str:
         return f"{self.__name} {self.__surname}"
 
-    def get_transactions(self) -> List[str]:
+    @property
+    def transactions(self) -> List[str]:
         return self.__transactions.copy()
 
     def generate_statement(self):
-        print(f"Account: {self.get_owner()} [{self.get_account_number()}]")
-        print(f"Balance: ${self.get_balance()}")
-        transactions = self.get_transactions()
+        print(f"Account: {self.owner} [{self.account_number}]")
+        print(f"Balance: ${self.balance}")
+        transactions = self.transactions
         if transactions:
             for transaction in transactions:
                 print(transaction)
         else:
-            print(f"No transactions for account {self.get_account_number()}")
+            print(f"No transactions for account {self.account_number}")
         if self.__cards:
             print("Linked cards:")
             for card in self.__cards.values():
-                print(f"- {card.get_owner()}, Card #{card.get_card_number()}")
+                print(f"- {card.owner}, Card #{card.card_number}")
 
     def clear_transactions(self):
         self.__transactions.clear()
@@ -194,10 +204,10 @@ def main():
 
     card.deposit(100)
     card.withdraw(50)
-    balance = card.get_balance()
+    balance = card.balance
     if balance is not None:
         print("Card balance:", balance)
-    transactions = card.get_transactions()
+    transactions = card.transactions
     if transactions is not None:
         print("Card transactions:", transactions)
     card.exit()
