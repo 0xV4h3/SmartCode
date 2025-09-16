@@ -5,8 +5,10 @@ from math import gcd
 class Fraction:
 
     def __init__(self, numerator, denominator):
-        self.top = numerator
-        self.bottom = denominator
+        frac_gcd = gcd(numerator, denominator)
+        self.top = numerator//frac_gcd
+        self.bottom = denominator//frac_gcd
+
 
     def __eq__(self, other):
         first_num = self.top * other.bottom
