@@ -1,16 +1,109 @@
-# Ignore all .idea files and folders
-Python/Lessons/.idea/
+########################################
+# General Python ignores               #
+########################################
 
-# Allow code style and run configuration sharing (if needed for team)
-!.idea/codeStyles/
-!.idea/runConfigurations/
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Ignore user-specific/workspace files
-.idea/shelf/
-.idea/workspace.xml
-.idea/httpRequests/
-.idea/dataSources/
-.idea/dataSources.local.xml
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+
+########################################
+# Virtual environments                 #
+########################################
+
+# Ignore all virtual environment folders
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+venv/
+.env/
+env/
+
+########################################
+# PyCharm (.idea)                      #
+########################################
+
+# Ignore all .idea folders in subprojects
+**/.idea/
+
+# Allow code style and run configuration sharing (for team collaboration)
+!**/.idea/codeStyles/
+!**/.idea/runConfigurations/
+
+# Ignore user-specific and workspace files
+**/.idea/shelf/
+**/.idea/workspace.xml
+**/.idea/httpRequests/
+**/.idea/dataSources/
+**/.idea/dataSources.local.xml
+
+########################################
+# OS-specific files                    #
+########################################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*.~
+
+########################################
+# Common development artifacts         #
+########################################
+
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints
+
+# Build artifacts
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+########################################
+# Node.js (just in case)               #
+########################################
+
+node_modules/
+
+########################################
+# Temporary editor files               #
+########################################
+
+# VSCode
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+########################################
+# Example: Ignore data files           #
+########################################
+
+data/
+*.csv
+*.tsv
+*.sqlite
+*.db
+
+########################################
+# Sensitive and environment files      #
+########################################
 
 # Ignore all .env files
 **/.env
+*.env
