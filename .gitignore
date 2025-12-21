@@ -79,6 +79,7 @@ build/
 # Excluded folders                     #
 ########################################
 **/lectureNotes/
+**/datasets/
 
 ########################################
 # Node.js (just in case)               #
